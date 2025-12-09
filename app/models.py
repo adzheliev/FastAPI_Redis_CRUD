@@ -30,7 +30,7 @@ class PhoneBase(BaseModel):
     phone: str = Field(
         ...,
         description="Номер телефона в международном формате (E.164)",
-        example="+79991234567",
+        example="+79990262823",
     )
 
     @field_validator("phone")
@@ -49,7 +49,7 @@ class PhoneCreate(PhoneBase):
     address: str = Field(
         ...,
         description="Адрес клиента",
-        example="Moscow, Red Square, 1",
+        example="Ватутина 19",
         max_length=255,
     )
 
@@ -70,6 +70,6 @@ class PhoneUpdate(BaseModel):
     address: str = Field(
         ...,
         description="Новый адрес клиента",
-        example="Saint Petersburg, Nevsky 10",
+        example="Пушкина 20",
         max_length=255,
     )
