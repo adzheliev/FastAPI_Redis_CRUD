@@ -12,8 +12,7 @@ from .repository import PhoneRepository
 from .service import PhoneService
 
 
-REDIS_URL = "redis://localhost:6379/0"
-
+REDIS_URL = "redis://redis:6379/0"
 
 async def get_redis_client() -> Redis:
     """
