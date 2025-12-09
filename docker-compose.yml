@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: fastapi_redis_example
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  api:
+    build: .
+    container_name: fastapi_phone_api
+    restart: unless-stopped
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
